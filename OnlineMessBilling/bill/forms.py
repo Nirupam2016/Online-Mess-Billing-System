@@ -22,28 +22,40 @@ for r in reg:
 		list1.append((r.regNum,r.regNum))
 
 class AddTransactionForm(forms.Form):
-
-	regnum = forms.CharField(
-		
+    regnum = forms.CharField(
+        
         required = True,
         label = 'Registration No.',
         max_length = 32,
         widget = forms.Select(
-        	choices = list1,
+            choices = list1,
             attrs={
             "class": "form-control",
             }
         )
     )
-	item = forms.CharField(
-		
+    item = forms.CharField(
+        
         required = True,
         label = 'Item',
         max_length = 32,
         widget = forms.Select(
-        	choices = list2,
+            choices = list2,
             attrs={
             "class": "form-control",
             }
         )
     )
+    number = forms.IntegerField(
+        required = True,
+        label = 'Number',
+        widget = forms.NumberInput(
+            attrs={
+            "class": "form-control",
+            }
+        )
+    )
+	
+	
+    
+    

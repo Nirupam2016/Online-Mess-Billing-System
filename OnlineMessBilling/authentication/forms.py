@@ -20,6 +20,7 @@ course_choices = (
         ('MBA','MBA'),
         ('PHD','Phd'),
     )
+
 class UserRegistrationForm(forms.Form):
 
     first_name = forms.CharField(

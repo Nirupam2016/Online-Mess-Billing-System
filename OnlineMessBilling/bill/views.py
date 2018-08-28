@@ -55,6 +55,7 @@ def add_transaction(request):
 		if form.is_valid():
 			userObj = form.cleaned_data
 			regnum = userObj['regnum']
+			number = userObj['number']
 			item = userObj['item']
 			customer = Userprofile.objects.filter(regNum = regnum)
 			customer = customer.first()
@@ -64,7 +65,8 @@ def add_transaction(request):
 			order = order.first()
 			transaction = Transaction.objects.create(user = u, item = order)
 			transaction.regNum = regnum
-			transaction.price = order.price
+			transaction.number = number
+			transaction.price = order.price * number
 			transaction.save()
 			return redirect('/home/admin/add')
 		

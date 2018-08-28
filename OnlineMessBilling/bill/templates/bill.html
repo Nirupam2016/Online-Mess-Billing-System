@@ -45,7 +45,8 @@
 			      		
 				        <th scope="col">Item</th>
 				        <th scope="col">Date</th>
-				        <th scope="col">Price</th>
+				        <th scope="col">Quantity</th>
+				        <th scope="col">SubTotal</th>
 				        
 				        
 
@@ -56,6 +57,7 @@
 			    	<tr>
 			      		<td>{{item.item}}
 				      	<td>{{item.date}}</td>
+				      	<td>{{item.number}}</td>
 				      	<td>{{item.price}}</td>
 				      	
 
@@ -68,6 +70,7 @@
 			  	<tfoot>
             <tr>
                 <td><h3>Total</h3></td>
+                <td></td>
                 <td></td>
                 <td><h3>Rs.{{total}}</h3></td>
                 
